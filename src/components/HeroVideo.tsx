@@ -14,7 +14,7 @@ export function HeroVideo({ className = '' }: HeroVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [inView, setInView] = useState(false)
   const [loaded, setLoaded] = useState(false)
-  const [videoExists, setVideoExists] = useState<boolean | null>(null)
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     const el = containerRef.current
@@ -31,18 +31,10 @@ export function HeroVideo({ className = '' }: HeroVideoProps) {
   }, [])
 
   useEffect(() => {
-    if (!inView) return
-
-    fetch(VIDEO_PATH, { method: 'HEAD' })
-      .then((r) => {
-        setVideoExists(r.ok)
-        if (r.ok && videoRef.current) {
-          videoRef.current.src = VIDEO_PATH
-          videoRef.current.load()
-        }
-      })
-      .catch(() => setVideoExists(false))
-  }, [inView])
+    if (!inView || !videoRef.current || hasError) return
+    videoRef.current.src = VIDEO_PATH
+    videoRef.current.load()
+  }, [inView, hasError])
 
   return (
     <div ref={containerRef} className={`relative overflow-hidden rounded-[32px] ${className}`}>
@@ -50,7 +42,7 @@ export function HeroVideo({ className = '' }: HeroVideoProps) {
         src={POSTER}
         alt="SubSens app demo"
         className={`absolute inset-0 w-full h-full object-cover rounded-[32px] transition-opacity duration-500 ${
-          loaded && videoExists ? 'opacity-0 pointer-events-none' : 'opacity-100'
+          loaded && !hasError ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}
       />
       <video
@@ -63,9 +55,10 @@ export function HeroVideo({ className = '' }: HeroVideoProps) {
         autoPlay
         muted
         loop
-        preload="none"
+        preload="metadata"
         onLoadedData={() => setLoaded(true)}
         onCanPlay={() => setLoaded(true)}
+        onError={() => setHasError(true)}
       />
     </div>
   )
