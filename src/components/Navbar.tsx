@@ -20,7 +20,7 @@ export function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between min-w-0">
         <a href="#" className="flex items-center gap-3">
-          <img src="/images/icon-192.png" alt="SubSens" className="w-8 h-8 rounded-lg" />
+          <img src={`${import.meta.env.BASE_URL}images/icon-192.png`} alt="SubSens" className="w-8 h-8 rounded-lg" />
           <span className="font-display font-bold text-lg tracking-tight">SubSens</span>
         </a>
 

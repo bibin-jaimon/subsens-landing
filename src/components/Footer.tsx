@@ -10,8 +10,8 @@ const links = {
   Support: [
     { href: '#faq', label: 'FAQ' },
     { href: 'mailto:support@subsens.app', label: 'Support' },
-    { href: '/privacy.html', label: 'Privacy Policy' },
-    { href: '/terms.html', label: 'Terms' },
+    { href: `${import.meta.env.BASE_URL}privacy.html`, label: 'Privacy Policy' },
+    { href: `${import.meta.env.BASE_URL}terms.html`, label: 'Terms' },
   ],
 }
 
@@ -26,7 +26,7 @@ export function Footer() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <img src="/images/icon-192.png" alt="SubSens" className="w-8 h-8 rounded-lg" />
+              <img src={`${import.meta.env.BASE_URL}images/icon-192.png`} alt="SubSens" className="w-8 h-8 rounded-lg" />
               <span className="font-display font-bold text-lg">SubSens</span>
             </div>
             <p className="text-white/50 text-sm">
