@@ -20,9 +20,9 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        /* Viewport-height aware: scales down on short windows so content fits */
-        'display': ['clamp(2rem, min(10vw, 7vh), 5.5rem)', { lineHeight: '1', letterSpacing: '-0.04em' }],
-        'display-sm': ['clamp(1.5rem, min(6vw, 5vh), 3.5rem)', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
+        /* Large display fonts for hero and section headings */
+        'display': ['clamp(3rem, min(14vw, 12vh), 8rem)', { lineHeight: '1', letterSpacing: '-0.04em' }],
+        'display-sm': ['clamp(2.25rem, min(9vw, 8vh), 5rem)', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
