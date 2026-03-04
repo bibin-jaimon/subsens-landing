@@ -3,7 +3,7 @@ import { HeroVideo } from './HeroVideo'
 
 export function Hero() {
   return (
-    <section className="min-h-[100dvh] flex items-center justify-center pt-20 pb-6 sm:pt-24 sm:pb-8 md:pt-20 md:pb-8 lg:pt-16 lg:pb-10 relative overflow-visible">
+    <section className="min-h-[100dvh] flex items-center justify-center pt-16 pb-4 sm:pt-20 sm:pb-6 lg:pt-20 lg:pb-8 relative overflow-visible">
       {/* Ambient glow - fully contained */}
       <motion.div
         initial={{ opacity: 0 }}
@@ -12,15 +12,15 @@ export function Hero() {
         className="absolute top-1/2 right-0 w-[min(500px,40vw)] h-[min(500px,40vw)] -translate-y-1/2 translate-x-1/2 rounded-full bg-accent/12 blur-[80px] pointer-events-none"
       />
 
-      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 xl:px-14 relative min-w-0">
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-12 items-center min-w-0 w-full">
+      <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 relative min-w-0">
+        <div className="grid lg:grid-cols-2 gap-4 lg:gap-8 items-center min-w-0 w-full">
           <div className="lg:order-2 min-w-0 flex justify-center">
             {/* Phone as large as possible while fitting viewport - uses ~72dvh */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="relative w-full max-w-[min(400px,min(92vw,calc(72dvh*9/19.5)))]"
+              className="relative w-full max-w-[min(420px,min(95vw,calc(78dvh*9/19.5)))]"
             >
               <motion.div
                 animate={{ y: [0, -12, 0] }}
@@ -37,7 +37,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-accent font-medium text-sm uppercase tracking-widest mb-4"
+              className="text-accent font-medium text-sm uppercase tracking-widest mb-2 sm:mb-3"
             >
               Subscription tracker for iOS
             </motion.p>
@@ -46,7 +46,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
-              className="font-display text-display font-bold tracking-tight text-white mb-3 sm:mb-4 break-words"
+              className="font-display text-display font-bold tracking-tight text-white mb-2 sm:mb-3 break-words"
             >
               Take control.
               <br />
@@ -57,7 +57,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-base sm:text-lg text-white/70 max-w-md mb-4 sm:mb-6"
+              className="text-base sm:text-lg text-white/70 max-w-md mb-3 sm:mb-5"
             >
               Track usage. Spot money drain. Never miss a renewal. 100% private—no account, no servers.
             </motion.p>

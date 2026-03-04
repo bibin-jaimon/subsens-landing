@@ -20,8 +20,8 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        /* Large display fonts for hero and section headings */
-        'display': ['clamp(3rem, min(14vw, 12vh), 8rem)', { lineHeight: '1', letterSpacing: '-0.04em' }],
+        /* Hero headline - "Take control. Stop wasting." */
+        'display': ['clamp(2.5rem, min(11vw, 8vh), 6rem)', { lineHeight: '1', letterSpacing: '-0.04em' }],
         'display-sm': ['clamp(2.25rem, min(9vw, 8vh), 5rem)', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
       },
       animation: {
