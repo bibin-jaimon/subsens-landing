@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 const base = import.meta.env.BASE_URL
 const screenshots = [
   { src: `${base}images/screenshots/S1.png`, alt: 'Overview', label: 'Overview' },
-  { src: `${base}images/screenshots/S2.PNG`, alt: 'List', label: 'List' },
-  { src: `${base}images/screenshots/S3.PNG`, alt: 'Up Next', label: 'Up Next' },
-  { src: `${base}images/screenshots/S4.PNG`, alt: 'Free Trial', label: 'Trial' },
-  { src: `${base}images/screenshots/S5.PNG`, alt: 'Calendar', label: 'Calendar' },
+  { src: `${base}images/screenshots/S2.png`, alt: 'List', label: 'List' },
+  { src: `${base}images/screenshots/S3.png`, alt: 'Up Next', label: 'Up Next' },
+  { src: `${base}images/screenshots/S4.png`, alt: 'Free Trial', label: 'Trial' },
+  { src: `${base}images/screenshots/S5.png`, alt: 'Calendar', label: 'Calendar' },
 ]
 
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='606' viewBox='0 0 280 606'%3E%3Crect fill='%231a1a1e' width='280' height='606'/%3E%3Ctext x='140' y='300' fill='%23FF9500' font-size='24' text-anchor='middle'%3ESubSens%3C/text%3E%3C/svg%3E"
