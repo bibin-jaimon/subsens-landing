@@ -9,7 +9,7 @@ const items = [
 
 export function Privacy() {
   return (
-    <section id="privacy" className="py-32 bg-elevated border-y border-border">
+    <section id="privacy" className="py-20 md:py-28 lg:py-32 bg-elevated border-y border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

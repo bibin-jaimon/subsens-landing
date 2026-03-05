@@ -1,11 +1,13 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { APP_STORE_URL } from '../lib/constants'
 
 const links = [
   { href: '#features', label: 'Features' },
   { href: '#privacy', label: 'Privacy' },
   { href: '#screenshots', label: 'Screenshots' },
   { href: '#faq', label: 'FAQ' },
+  { href: '#download', label: 'Download' },
 ]
 
 export function Navbar() {
@@ -37,10 +39,10 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="#app-store-link"
+              href={APP_STORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 bg-accent hover:bg-accent-dark rounded-full text-sm font-semibold text-black transition-colors"
+              className="px-5 py-2.5 bg-accent hover:bg-accent-dark rounded-full text-sm font-semibold text-black transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-black"
             >
               Get SubSens Free
             </a>
@@ -98,11 +100,11 @@ export function Navbar() {
                 transition={{ delay: links.length * 0.05 }}
               >
                 <a
-                  href="#app-store-link"
+                  href={APP_STORE_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="inline-block px-6 py-3 bg-accent rounded-full font-semibold text-black"
+                  className="inline-block px-6 py-3 bg-accent rounded-full font-semibold text-black focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
                   Get SubSens Free
                 </a>

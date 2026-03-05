@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { APP_STORE_URL } from '../lib/constants'
 
 export function StickyCTA() {
   const [visible, setVisible] = useState(false)
@@ -34,10 +35,10 @@ export function StickyCTA() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4 min-w-0">
         <span className="font-medium text-white">Ready to take control?</span>
         <a
-          href="#app-store-link"
+          href={APP_STORE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-2.5 bg-accent hover:bg-accent-dark rounded-full font-semibold text-black text-sm transition-colors"
+          className="px-6 py-2.5 bg-accent hover:bg-accent-dark rounded-full font-semibold text-black text-sm transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
         >
           Get SubSens Free
         </a>

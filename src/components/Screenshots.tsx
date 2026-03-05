@@ -13,7 +13,7 @@ const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg
 
 export function Screenshots() {
   return (
-    <section id="screenshots" className="py-32">
+    <section id="screenshots" className="py-20 md:py-28 lg:py-32">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}

@@ -20,7 +20,8 @@ export default {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        /* Hero headline - "Take control. Stop wasting." */
+        /* Hero headline - "Take control. Stop wasting." - maximum size */
+        'hero': ['clamp(5rem, 24vh, 52vh)', { lineHeight: '1', letterSpacing: '-0.04em' }],
         'display': ['clamp(2.5rem, min(11vw, 8vh), 6rem)', { lineHeight: '1', letterSpacing: '-0.04em' }],
         'display-sm': ['clamp(2.25rem, min(9vw, 8vh), 5rem)', { lineHeight: '1.1', letterSpacing: '-0.03em' }],
       },
