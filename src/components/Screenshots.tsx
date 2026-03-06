@@ -1,13 +1,15 @@
 import { motion } from 'framer-motion'
+import { screenshots as screenshotFiles } from 'virtual:screenshots'
 
-const base = import.meta.env.BASE_URL
-const screenshots = [
-  { src: `${base}images/screenshots/S1.png`, alt: 'Overview', label: 'Overview' },
-  { src: `${base}images/screenshots/S2.png`, alt: 'List', label: 'List' },
-  { src: `${base}images/screenshots/S3.png`, alt: 'Up Next', label: 'Up Next' },
-  { src: `${base}images/screenshots/S4.png`, alt: 'Free Trial', label: 'Trial' },
-  { src: `${base}images/screenshots/S5.png`, alt: 'Calendar', label: 'Calendar' },
-]
+const base = import.meta.env.BASE_URL ?? ''
+const raw = Array.isArray(screenshotFiles) ? screenshotFiles : []
+const screenshots = raw
+  .filter((item): item is { file: string; label: string } => item && typeof item.file === 'string')
+  .map(({ file, label }) => ({
+    src: `${base}images/screenshots/${file}`,
+    alt: label ?? file,
+    label: label ?? file,
+  }))
 
 const PLACEHOLDER = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='606' viewBox='0 0 280 606'%3E%3Crect fill='%231a1a1e' width='280' height='606'/%3E%3Ctext x='140' y='300' fill='%23FF9500' font-size='24' text-anchor='middle'%3ESubSens%3C/text%3E%3C/svg%3E"
 
@@ -31,19 +33,19 @@ export function Screenshots() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+          className="grid grid-cols-2 md:grid-cols-3 gap-6"
         >
           {screenshots.map((s, i) => (
             <motion.div
-              key={s.label}
-              initial={{ opacity: 0, x: 40 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              key={s.src}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              whileHover={{ scale: 1.02, y: -8 }}
-              className="flex-shrink-0 w-[280px] snap-center"
+              transition={{ delay: i * 0.06 }}
+              whileHover={{ scale: 1.02, y: -4 }}
+              className="flex flex-col items-center"
             >
-              <div className="rounded-2xl overflow-hidden border border-border bg-elevated aspect-[9/19.5]">
+              <div className="rounded-2xl overflow-hidden border border-border bg-elevated aspect-[9/19.5] w-full max-w-[280px]">
                 <img
                   src={s.src}
                   alt={s.alt}
